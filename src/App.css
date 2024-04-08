@@ -1,3 +1,966 @@
+html,body{
+  overflow-x: clip;
+  width: 100%;
+  height: 2000px;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* -----------Navbar---------- */
+div.upperNav{
+  width: 100%;
+  background-color: black;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div img{
+  margin-right: 0.5rem;
+  width: 90px;
+}
+
+.navbar{
+  width: 100%;
+  height: 65px;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  justify-content: space-between;
+  z-index: 15;
+}
+.navS{
+  background-color: white;
+  width: 100%;
+  height: 65px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 15;
+}
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content:center;
+  cursor: pointer;
+}
+
+.icon p{
+  justify-content: center;
+  margin: 0;
+}
+
+.icon_svg {
+  align-self: flex-end;
+  fill: black;
+}
+
+.navLeft{
+  display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    align-items: center;
+}
+
+.navRight{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navRight svg{
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.navRight button{
+  border-radius: 14px;
+}
+.overlay{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.spidermanImage{
+  width: 100%;
+  height: 100%;
+}
+
+.darkOverlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  left: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+}
+
+.content-overlay{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  z-index: 1;
+  gap: 20px;
+  top: 10px;
+  left: 5px;
+  padding-left: 35px;
+}
+
+.marvelImageContainer img.marvelImage{
+  width: 500px;
+  object-fit: contain;
+}
+
+.content-overlay h2{
+  color: white;
+  font-family: 'SST Light2';
+  font-size: 35px;
+}
+
+.marvelImage {
+  width: 35%;
+  height: auto;
+  object-fit: contain;
+}
+
+.content-overlay p {
+  color: white;
+  text-align: left;
+  width: 55%;
+  font-family: 'SST Light';
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.content-overlay button{
+  margin-top: 5px;
+  margin-left: 150px;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+}
+@media (max-width: 1200px) {
+  .content-overlay {
+      padding-left: 35px;
+      padding-right: 35px;
+      top: 120px;
+  }
+
+  .overlay {
+      height: 645px;
+  }
+
+  .spidermanImage {
+      width: 100%;
+  }
+
+  .marvelImage {
+      width: 40%;
+  }
+}
+
+@media (max-width: 1024px) {
+
+
+  .darkOverlay2 {
+      width: 100%;
+      position: absolute;
+      top: 90%;
+      height: 300px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.95));
+      background-blend-mode: color-burn;
+      box-shadow: 0 -50px 50px 30px black;
+  }
+
+  .marvelImageContainer {
+      text-align: center;
+  }
+
+  .content-overlay p{
+      width: 60%;
+      margin: 0 auto;
+      text-align: center;
+
+  }
+
+  .darkOverlay {
+      width: 30%;
+  }
+
+  .marvelImage {
+      width: 80%;
+  }
+
+  .spidermanImage {
+      width: 100%;
+  }
+
+  .content-overlay {
+      bottom: -410px;
+      align-items: center;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  .darkOverlay2 {
+      width: 100%;
+      position: absolute;
+      top: 90%;
+      height: 300px;
+      background-color: rgba(15, 16, 31, 1);
+      
+  }
+
+  .overlay {
+      height: 100%;
+  }
+
+  .content-overlay {
+      bottom: -250px;
+      align-items: center;
+      gap: 35px;
+  }
+
+  .spidermanImage {
+      height: auto;
+  }
+
+  .content-overlay h2 {
+      font-size: 30px;
+      text-align: center;
+  }
+
+  .marvelImage {
+      width: 90%;
+  }
+
+  .content-overlay p {
+      width: 90%;
+      font-size: 24px;
+      text-align: center;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .content-overlay {
+      padding: 0;
+  }
+
+  .content-overlay p {
+      font-size: 14px;
+  }
+}
+
+@media screen and (max-width : 352px) {
+  .content-overlay button {
+      flex-direction: column;
+  }
+}
+/* --------------------------- */
+
+/* fourth section cards */
+.card_section {
+  margin-top: 50px;
+  width: 100%;
+
+}
+
+.card_section-cards {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+  grid-auto-flow: row;
+  grid-auto-rows: 86px;
+}
+
+.card_section-cards>div>picture>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  filter: contrast(60%);
+  /* reduce the color saturation initially */
+
+}
+
+.card_section-cards>div>picture>img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  filter: contrast(100%);
+  /* restore full color on hover */
+
+}
+@media screen and (max-width : 1024px) {
+  .card_section-cards {
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 300px;
+  }
+}
+/* ------------------------------- */
+section.ps5{
+  margin-top: 30px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ps5 img{
+  width: 750px;
+  margin-left: 50px;
+}
+section.ps5 div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+div.ps5Head h1{
+  font-weight: 350;
+  width: 300px;
+  text-align: start;
+}
+div.ps5Head h3{
+  color: blue;
+  font-weight: 200;
+  margin-top: 50px;
+}
+
+div.ps5Head p{
+  font-size: 12px;
+}
+/* ------------------------------- */
+.games{
+  background-color: black;
+}
+
+.games h1{
+  font-weight: 100;
+  padding-top: 50px;
+  color: white;
+}
+
+.games .switch{
+  margin-bottom: 50px;
+  margin-top: 40px;
+  background-color: rgba(33, 33, 33, 0.783);
+  border-radius: 30px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.switch .new{
+  background-color: transparent;
+  color: white;
+  margin: 0;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+}
+.switch .soon{
+  background-color: transparent;
+  color: white;
+  margin: 0;
+  border-radius: 30px;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+
+}
+
+.switch .new:focus,
+.switch .soon:focus{
+  background-color: rgb(255, 255, 255);
+  color: black;
+
+}
+
+.games .cards{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: grid;
+  grid-template-columns:repeat(5,minmax(100px,1fr));
+  grid-auto-rows: 200px;
+  grid-gap: 70px;
+}
+
+.gameCard{
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.gameCard img{
+  width: 200px;
+}
+.gameCard p{
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+/* ------------------------------- */
+.psPlus{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image: url('https://gmedia.playstation.com/is/image/SIEPDC/play-play-play-ps-plus-background-desktop-01-ja-jp-03jul23?$4000px$');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+.psPlus .content{
+  margin: 50px 20px 100px 20px;
+}
+
+.psPlus img{
+  margin-top: 50px;
+  width: 200px;
+}
+
+.psPlus h1{
+  margin-top: 10px;
+  font-weight: 200;
+}
+
+.psPlus .card{
+  border-radius: 20px;
+  width: 800px;
+  color: white;
+  background-image: url('https://gmedia.playstation.com/is/image/SIEPDC/ps-plus-premium-image-block-desktop-01-en-13dec23?$4000px$');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  text-align: start;
+}
+
+.psPlus .card .text{
+  margin: 80px 20px 0 20px;
+  width: 400px;
+}
+
+
+.card .text h5{ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  color: rgb(255, 166, 0);
+  background-color: rgb(51, 51, 51);
+}
+.carousel-control-next{
+  margin-right: 30px;
+  position: relative;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 100%;
+}
+.carousel-control-prev{
+  margin-left: 30px;
+  position: relative;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 100%;
+}
+
+.carousel-slide{
+  margin: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carouselIndicators{
+  bottom: 5px;
+  margin-bottom: 50px;
+  left: 0;
+  right: 0;
+  width: auto;
+  transition: 0.6s ease;  
+
+}
+
+.carouselIndicators button{
+    width: 30px;
+    height: 2px;
+    margin: 0;
+    border: 0;
+    background: rgb(157, 157, 157);
+    margin-left: .5rem;
+    margin-right: .5rem;
+    transition: 0.2s ease;
+}
+
+.discover{
+  font-weight: bolder;
+  margin-bottom: 60px;
+  padding: 10px 16px;
+  color: white;
+  width: 250px;
+  border-radius: 30px;
+  background-color: blue;
+}
+/* ------------------------------- */
+.VR{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-image: url('https://blog.playstation.com/tachyon/2023/02/9777b74a69bdb53eee269fac15ad5793d545a095.jpg?resize=1088%2C612&crop_strategy=smart&zoom=1.5');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.VR .text{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin: 200px 500px 100px 50px;
+}
+.VR h1{
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.xyz button{
+  font-size: 15px;
+  font-weight: bolder;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  
+}
+/* ------------------------------- */
+.thisMonth{
+  width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+.tmonth{
+  width: 100%;
+  background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/this-month-on-playstation-jun-homepage-background-desktop-01-en-26may23?$3200px$");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+div.month{
+  width: 400px;
+  color: white;
+  margin-left: 200px;
+  margin-top: 80px;
+  text-align: start;
+}
+div h1.this{
+  font-weight: 300;
+  margin: 0;
+}
+
+.month h1{
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.month button{
+  margin-top: 10px;
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 3px 12px;
+  border: none;
+  outline: none;
+}
+
+.eigth-section-cards{
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 50px;
+  padding: 30px 220px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgba(38, 37, 79, 1);
+
+}
+
+.eigth-section-cards-card-1 {
+  flex-direction: column;
+  display: flex;
+  width: 320px;
+  gap: 20px;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.eigth-section-cards-card-2 {
+  flex-direction: column;
+  display: flex;
+  width: 320px;
+  gap: 20px;
+  cursor: pointer;
+  transform: scale(1.05);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.eigth-section-cards-card-3 {
+  flex-direction: column;
+  display: flex;
+  width: 320px;
+  transform: scale(1.05);
+  gap: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.eigth-section-cards-card-1>picture>img:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+  /* this creates a black box shadow */
+  transform: scale(1.05);
+  /* this will scale the element up to 105% of its original size */
+}
+
+.eigth-section-cards-card-2>picture>img:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+  /* this creates a black box shadow */
+  transform: scale(1.05);
+  /* this will scale the element up to 105% of its original size */
+}
+
+.eigth-section-cards-card-3>picture>img:hover {
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+  /* this creates a black box shadow */
+  transform: scale(1.05);
+  /* this will scale the element up to 105% of its original size */
+}
+
+.eigth-section-cards-card-1>picture>img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.eigth-section-cards-card-2>picture>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.eigth-section-cards-card-3>picture>img {
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.eigth-section-cards-card-1>p {
+  color: white;
+  text-align: center;
+  font-family: "SST Medium";
+  font-size: 15px;
+}
+
+.eigth-section-cards-card-2>p {
+  color: white;
+  text-align: center;
+  font-family: "SST Medium";
+  font-size:15px;
+}
+
+.eigth-section-cards-card-3>p {
+  color: white;
+  text-align: center;
+  font-family: "SST Medium";
+  font-size: 15px;
+}
+
+/* ------------------------------- */
+.social{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 100px;
+  gap: 50px;
+}
+.social h1{
+  font-weight: 200;
+}
+.follow{
+  width: 50%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.follow img{
+  width: 100%;
+  object-fit: contain;
+}
+/* ------------------------------- */
+
+/* -----------Footer-------------- */
+.footer-section {
+  width: 100%;
+  height: 100%;
+  background-color: #00439c;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 80px;
+}
+
+.footer-section-logo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  border-bottom: 1px solid #3d69b0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-section-logo-heading {
+  font-size: 50px;
+  color: white;
+}
+
+
+
+.footer-section-logo-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #3d69b0;
+  padding-bottom: 15px;
+  gap: 25px;
+}
+
+.footer-section-logo-content-left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-section-logo-content-right {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: row;
+}
+
+.footer-section-logo-content {
+  color: white;
+  margin: 15px 0;
+}
+
+.footer-section-logo-content h2 {
+  font-size: 17px;
+}
+
+.footer-section-logo-content p {
+  font-size: 14px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.footer-section-logo-content p:hover {
+  color: rgb(211, 198, 198);
+}
+
+.footer-section-logo-content-one {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+  gap: 7px;
+}
+
+.footer-section-logo-content-two {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 7px;
+  width: 200px;
+}
+
+.footer-section-logo-content-three {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 7px;
+}
+
+.footer-section-logo-content-four {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 200px;
+  gap: 7px;
+}
+
+.footer-section-logo-content-five {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 200px;
+  gap: 7px;
+}
+
+.footer-section-logo-content-six {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 200px;
+  gap: 7px;
+}
+
+.footer-section-logo-content-six-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer-section-logo-content-six-icons img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.footer-section-logo-content2 {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #3d69b0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+
+.footer-section-logo-content2-first {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.footer-section-logo-content2-first-headings {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.footer-section-logo-content2-first img {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-section-logo-content2 p {
+  color: white;
+  width: 95%;
+  text-align: start;
+  font-size: 14.5px;
+  margin: 0;
+  line-height: 20px;
+}
+
+.footer-section-logo-content3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.footer-section-logo-content3-left {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.footer-section-logo-content3-left h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer-section-logo-content3-right {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  color: white;
+
+}
+
+.footer-section-logo-content3-right div {
+  font-size: 14px;
+}
+
+
+/* -------------------------------- */
+
+
+
 .App {
   text-align: center;
 }
